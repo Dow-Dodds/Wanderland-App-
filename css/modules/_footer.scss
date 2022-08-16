@@ -1,0 +1,104 @@
+// footer styles 
+footer {
+    background-color: $pink;
+    position: relative;
+    bottom: 0px;
+    top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    border-top: 1px solid $softblack;
+    
+    #footer-logo {
+        width: 20%;
+        position: relative;
+        left: 1rem;
+        top: 2rem;
+    }
+    #footer-nav {
+        width: 80%;
+    }
+    #footer-nav #nav-list {
+        text-align: right;
+        a {
+            font-family: 'roc-grotesk', sans-serif;
+            margin-right: 1rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    }
+    #footer-nav #nav-socials {
+        text-align: right;
+        i {
+            margin-right: 1rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    }
+    .copyright {
+        width: 80%;
+        text-align: center;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+    p {
+        margin-bottom: 0;
+        width: 80%;
+        font-size: 16px;
+        font-family: 'roc-grotesk', sans-serif;
+        text-align: right;
+        margin-left: 20%;
+    }
+}
+
+
+@media screen and (min-width: 1000px){
+    footer {
+
+     #footer-logo{
+        width: 10%;
+        height: 8rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+         }
+     #footer-nav {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        #nav-list {
+            width: 50%;
+            text-align: left;
+        }
+        #nav-list a {
+            margin-top: 0;
+        }
+        #nav-socials {
+            width: 50%;
+        }
+        #nav-socials i {
+            margin-top: 0;
+            margin-right: 2rem;
+            font-size: 22px;
+        }
+     }
+     .copyright {
+        width: 100%;
+        position: absolute;
+        bottom: .5rem;
+        
+        p{
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+     }
+    }
+}

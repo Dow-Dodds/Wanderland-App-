@@ -1,0 +1,85 @@
+
+// cooolers 
+$pink: rgba(216,167,174,1);
+$halfpink: rgba(216,167,174, 0.7);
+$beige: rgba(236,235,223,1);
+$halfbeige: rgba(236,235,223,.85);
+$green: rgba(0,142,90,1);
+$halfgreen: rgba(0,142,90,.5);
+$softblack: rgba(44,40,42,1);
+$yellow: rgba(251,243,177,1);
+$halfyellow: rgba(251,243,177,.7);
+
+
+
+// fonts
+h1, h2, h3, h4 {
+    font-family: 'vasquz';
+    
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: $softblack;
+    margin-bottom: 0;
+  }
+
+  p, a {
+    font-family: 'roc-grotesk', sans-serif;
+    text-decoration: none;
+    margin-bottom: 0;
+    color: $softblack;
+    font-size: 18px;
+
+  }
+
+h2 {
+  font-size: 35px;
+}
+
+
+// button styles  
+  .button {
+    border: 1px solid $softblack;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roc-grotesk', sans-serif;
+    box-shadow: 10px 10px 0px 0px rgba(44,40,40,0.24);
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(44,40,40,0.24);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(44,40,40,0.24);
+    margin-bottom: 2rem;
+    background-color: $beige;
+    a {
+        margin-left: 1rem;
+        font-family: 'roc-grotesk', sans-serif;
+        text-decoration: none;
+        font-size: 18px;
+        color: $softblack;
+        transition: all 0.3s ease-in-out;
+        transition-duration: 2s; /* one second */
+        
+    }
+  
+    p {
+        font-family: 'roc-grotesk', sans-serif;
+  
+    }
+  
+    img {
+        height: 3rem;
+        margin-top: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+  }
+  
+  .button img:hover{
+    margin-left: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+    opacity: .7;
+  }
+  

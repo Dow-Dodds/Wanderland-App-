@@ -1,0 +1,698 @@
+
+
+// subheading styles wander planner
+#subheading{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    padding-top: 2rem;
+
+    .bi-x-circle{
+        position: absolute;
+        left: 90%;
+        top: 10px;
+        font-size: 28px;
+        color: $softblack;
+    }
+    .bi-x-circle:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
+}
+
+#overlay-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: $beige;
+    top: 0;
+    left: 100vw;
+    z-index: 100;
+    transition:all 2s ease;
+    opacity: 0;
+    display: none;
+}
+
+#overlay-container.active {
+    left: 0;
+    opacity: 1;
+    display: block;
+    animation-duration: .8s;
+    animation-name: animate-fade;
+    animation-delay: .3s;
+    animation-fill-mode: backwards;
+    overflow: scroll;
+}
+
+@keyframes animate-fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  #overlay-container {
+      display: flex;
+      flex-wrap: wrap;
+
+      #nav-overlay {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #nav-overlay #logo {
+          width: 20%;
+          padding-top: 1rem;
+          padding-left: 1rem;
+      }
+      #nav-overlay #burger-overlay{
+          width: 80%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+      }
+      #nav-overlay #burger-overlay img{
+            width: 35%;
+            height: 4rem;
+            padding-top: 1.3rem;
+            padding-right: .8rem;
+      }
+
+
+      #go-button {
+        margin-top: 1rem;
+        margin-left: 25%;
+        width: 50%;
+        justify-self: center;
+      }
+      #error{
+        height: 0;
+        background-color: #EA9010;
+        border-bottom: 1px solid $softblack;
+        display: flex;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        
+        p{
+            color: $beige;
+        }
+      }
+  }
+
+
+    //   toolbar styles 
+
+      #toolbar{
+          background-color: $green;
+          color: $beige;
+          height: auto;
+          width: 100%;
+          margin-top: 1rem;
+          border-top: 1px solid $softblack;
+          border-bottom: 1px solid $softblack;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: .5rem;
+          .custom-select{
+            text-align: center;
+            width: 35%;
+            transition: all 0.3s ease-in-out;
+
+        
+          }
+          #parsley-id-5 {
+            margin-bottom: 0;
+            border-right: 1px solid $softblack;
+            position: absolute;
+            top: 1.8rem;
+            width: 50%;
+            transition: all 0.3s ease-in-out;
+            left: 0;
+            padding: 0;
+
+        
+            li {
+                list-style: none;
+                font-family: 'roc-grotesk';
+                font-size: 20px;
+                border-top: 1px solid $softblack;
+                background-color: #EA9010;
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100%;
+                left: 0;
+                border-top: 1px solid $softblack;
+
+
+            }
+          }
+          #parsley-id-7 {
+            margin-bottom: 0;
+            position: absolute;
+            top: 1.8rem;
+            width: 50%;
+            transition: all 0.3s ease-in-out;
+            left: 50%;
+            padding: 0;
+
+
+            li{
+                list-style: none;
+                font-family: 'roc-grotesk';
+                font-size: 20px;
+                border-top: 1px solid $softblack;
+                background-color: #EA9010;
+                padding-left: 10px;
+                padding-right: 10px;
+                left: 50%;
+                width: 100%;
+                border-top: 1px solid $softblack;
+            }
+          }
+          .bi-circle-fill {
+            width: 25%;
+            font-size: 14px;
+          }
+            select {
+                font-size: 20px;
+                font-family: 'roc-grotesk', sans-serif;
+                background-color: $green;
+                color: $beige;
+                appearance: none;
+                border: 0;
+                height: auto;
+                text-align: center;
+            }
+        
+            .date-pickers-wrapper{ 
+                width: 100%;
+                padding-top: .5rem;
+                transition: all 0.3s ease-in-out;
+
+            }
+        
+            input { 
+                background: none;
+                border: none;
+                color: $beige;
+                font-family: 'roc-grotesk';
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+            }
+            #guest-menu {
+                width: 15%;
+                transition: all 0.3s ease-in-out;
+            }
+            #guest-menu i {
+                font-size: 20px;
+            }
+
+      }
+
+    #toolbar #guest-menu:hover{
+        cursor: pointer;
+        opacity: 0.7;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $beige;
+    }
+    #toolbar .custom-select:hover{
+        cursor: pointer;
+        opacity: 0.7;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $beige;
+    }
+    #toolbar .date-pickers-wrapper:hover{
+        cursor: pointer;
+        opacity: 0.7;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $beige;
+    }
+   
+
+    // triptype wrapper styles
+    #triptype-wrapper {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-wrap: wrap;
+            h6{
+                font-family: "roc-grotesk-wide", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 20px;
+                padding: 1rem;
+                width: 100%;
+            }
+      }
+
+    #triptype-wrapper .triptype-box {
+        width: 100%;
+        height: 60vh;
+        border-top: 1px solid $softblack;
+        border-left: 1px solid $softblack;
+        border-right: 1px solid $softblack;
+        .item-wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: 25%;
+            border-bottom: 1px solid $softblack;
+        
+            h4 {
+                font-size: 24px;
+            }
+
+            #culture {
+                width: 65%;
+                height: 100%;
+                border-right: 1px solid $softblack;
+                background-image: url(../img/food.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                filter: saturate(0%);
+                transition: all 0.3s ease-in-out;
+                position: relative;
+
+            }
+            #culture:hover {
+                filter: saturate(100%);
+                cursor: pointer;
+
+            }
+            
+            #foodtext {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                width: 35%;
+                height: 100%;
+                text-align: center;
+                background-color: $halfpink;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+               
+
+
+            }
+
+            #adventure {
+                width: 50%;
+                height: 100%;
+                background-image: url(../img/adventure.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-left: 1px solid $softblack;
+                box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                filter: saturate(0%);
+                transition: all 0.3s ease-in-out;
+
+            }
+            #adventure:hover {
+                filter: saturate(100%);
+                cursor: pointer;
+            }
+            #adventuretext {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                height: 100%;
+                text-align: center;
+                background-color: $halfyellow;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+
+
+            }
+
+            #relax{
+                width: 70%;
+                height: 100%;
+                background-image: url(../img/relax.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-right: 1px solid $softblack;
+                box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                filter: saturate(0%);
+                transition: all 0.3s ease-in-out;
+
+                
+            }
+            #relax:hover {
+                filter: saturate(100%);
+                cursor: pointer;
+
+            }
+        
+            #relaxtext{
+                width: 30%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                text-align: center;
+                background-color: $halfpink;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+
+
+            }
+            #alltext{
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: $halfyellow;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+
+
+            }
+            #all{
+                width: 60%;
+                height: 100%;
+                background-image: url(../img/all.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-left: 1px solid $softblack;
+                box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                filter: saturate(0%);
+                transition: all 0.3s ease-in-out;
+
+            }
+            #all:hover {
+                filter: saturate(100%);
+                cursor: pointer;
+            }
+
+
+
+
+        }
+        .big-item-wrapper{
+            display: none;
+        }
+
+        .item-wrapper:hover{
+            cursor: pointer;
+
+        }
+
+    }
+
+
+
+    @media screen and (min-width: 1000px) { 
+        #subheading{
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            padding-top: 2rem;
+        
+            .bi-x-circle{
+                position: absolute;
+                left: 94%;
+                top: 15px;
+                font-size: 34px;
+                color: $softblack;
+            }
+        }
+       
+        h2 {
+            font-size: 55px;
+            padding-bottom: 1rem;
+        }
+
+        #toolbar {
+            margin-top: 0;
+
+            .custom-select{
+                width: 22.5%;
+
+            }
+            .date-pickers-wrapper {
+                width: 32.5%;
+            }
+            #guest-menu {
+                width: 15%;
+            }
+            #guest-menu i {
+                font-size: 20px;
+            }
+            .bi-circle-fill {
+                width: 15%;
+               
+            }
+            input {
+                font-size: 20px;
+                margin-bottom: .5rem;
+            }
+            select {
+                font-size: 20px;
+            }
+            #parsley-id-5 {
+                top: 3.1rem;
+               
+                
+                li {
+                    
+                    
+                    height: 4rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+            }
+            #parsley-id-7 {
+                top: 3.1rem;
+                // border-left: 1px solid $softblack;
+                
+                li {
+                   
+                    height: 4rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+            }
+        }
+
+        #triptype-wrapper {
+            #trip-type-question{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding: 2rem;
+                height: auto;
+                justify-content: center;
+                box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 40%);
+              
+                h6 {
+                    -webkit-text-stroke: 1px;
+                }
+            }
+            .button-slide{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+
+        #triptype-wrapper .triptype-box {
+            display: flex;
+            flex-wrap: wrap;
+            height: 55vh;
+            width: 100%;
+            .item-wrapper{
+               display: none;
+            }
+
+            .big-item-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                width: 50%;
+                height: 50%;
+                h4 {
+                    font-size: 26px;
+                }
+
+                #bigculture {
+                    width: 60%;
+                    height: 100%;
+                    border-right: 1px solid $softblack;
+                    background-image: url(../img/food.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                    filter: saturate(0%);
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+    
+                }
+                #bigculture:hover {
+                    filter: saturate(100%);
+                    cursor: pointer;
+    
+                }
+                #bigfoodtext {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40%;
+                    height: 100%;
+                    text-align: center;
+                    border-right: 1px solid $softblack;
+                    background-color: $halfpink;
+                    padding: 1rem;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+
+
+                }
+    
+                #bigadventure {
+                    width: 60%;
+                    height: 100%;
+                    background-image: url(../img/adventure.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-left: 1px solid $softblack;
+                    box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                    filter: saturate(0%);
+                    background-position: center;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+
+                }
+                #bigadventure:hover {
+                    filter: saturate(100%);
+                    cursor: pointer;
+                }
+                #bigadventuretext {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40%;
+                    height: 100%;
+                    text-align: center;
+                    background-color: $halfyellow;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+
+
+                }
+    
+                #bigrelax{
+                    width: 60%;
+                    height: 100%;
+                    background-image: url(../img/relax.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-right: 1px solid $softblack;
+                    box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                    filter: saturate(0%);
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+
+                    
+                }
+                #bigrelax:hover {
+                    filter: saturate(100%);
+                    cursor: pointer;
+    
+                }
+            
+                #bigrelaxtext{
+                    width: 40%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    text-align: center;
+                    border-right: 1px solid $softblack;
+                    background-color: $halfyellow;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+
+
+                }
+                #bigalltext{
+                    width: 40%;
+                    height: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background-color: $halfpink;
+                    padding: 1rem;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+
+
+                }
+                #bigall{
+                    width: 60%;
+                    height: 100%;
+                    background-image: url(../img/all.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    box-shadow: inset 0 0 0 1000px rgb(236 235 223 / 10%);
+                    filter: saturate(0%);
+                    border-right: 1px solid $softblack;
+                    border-bottom: 1px solid $softblack;
+                    transition: all 0.3s ease-in-out;
+
+                }
+                #bigall:hover {
+                    filter: saturate(100%);
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #subheading .bi-x-circle {
+            left: 95%;
+            top: 2rem;
+        }
+        #toolbar {
+            select{
+                font-size: 24px;
+            } 
+            input {
+                font-size: 24px;
+            }
+            #guest-menu i {
+                font-size: 24px;
+            }
+        }
+
+     }
+
+
